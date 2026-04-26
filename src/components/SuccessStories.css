@@ -1,0 +1,193 @@
+/* ===== SUCCESS STORIES ===== */
+.success {
+  position: relative;
+  background: var(--off-white);
+  overflow: hidden;
+}
+
+.success__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 90% 10%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 10% 90%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.success__header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 3.5rem;
+}
+
+.success__header .section-badge {
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-dark);
+}
+
+.success__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  color: var(--dark-800);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.success__sub {
+  font-size: 0.93rem;
+  color: rgba(26,26,36,0.6);
+  line-height: 1.8;
+}
+
+/* Grid */
+.success__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card */
+.success__card {
+  position: relative;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.success__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12), 0 0 0 1px var(--story-color);
+}
+
+.success__card-glow {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, var(--story-color) 0%, transparent 70%);
+  opacity: 0.08;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.success__card:hover .success__card-glow {
+  opacity: 0.14;
+}
+
+.success__card-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.success__brand-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.success__brand-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-800);
+  margin-bottom: 0.15rem;
+}
+
+.success__category {
+  font-size: 0.72rem;
+  color: rgba(26,26,36,0.45);
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.success__desc {
+  font-size: 0.845rem;
+  color: rgba(26,26,36,0.65);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+/* Metrics */
+.success__metrics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.success__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.success__metric-val {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--story-color);
+  line-height: 1;
+}
+
+.success__metric-label {
+  font-size: 0.7rem;
+  color: rgba(26,26,36,0.45);
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.success__result {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--story-color);
+  background: color-mix(in srgb, var(--story-color) 10%, transparent);
+  padding: 0.4rem 0.85rem;
+  border-radius: 99px;
+  border: 1px solid color-mix(in srgb, var(--story-color) 25%, transparent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Bar */
+.success__card-bar {
+  height: 3px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.success__card-bar-fill {
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(90deg, var(--story-color), color-mix(in srgb, var(--story-color) 50%, transparent));
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .success__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,145 @@
+/* ===== FILM & ENTERTAINMENT ===== */
+.film {
+  position: relative;
+  background: var(--dark-700);
+  overflow: hidden;
+}
+
+.film__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(201,168,76,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 90% 10%, rgba(232,67,147,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.film__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+}
+
+.film__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  color: var(--light-200);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.film__sub {
+  font-size: 0.93rem;
+  color: rgba(250,248,243,0.6);
+  line-height: 1.8;
+}
+
+/* Grid */
+.film__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* Card */
+.film__card {
+  position: relative;
+  padding: 2rem 1.75rem;
+  background: var(--dark-800);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: default;
+}
+
+.film__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), rgba(232,67,147,0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.film__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201,168,76,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(201,168,76,0.07);
+}
+
+.film__card:hover::before { opacity: 1; }
+
+.film__card-cine {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at bottom right, rgba(201,168,76,0.06), transparent 70%);
+  pointer-events: none;
+}
+
+.film__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.film__icon {
+  width: 46px;
+  height: 46px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.film__card:hover .film__icon {
+  background: rgba(201,168,76,0.15);
+  transform: scale(1.05);
+}
+
+.film__brand {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+  margin-bottom: 0.4rem;
+}
+
+.film__card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--light-200);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.film__card-desc {
+  font-size: 0.82rem;
+  color: rgba(250,248,243,0.55);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .film__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 580px) {
+  .film__grid { grid-template-columns: 1fr; }
+}

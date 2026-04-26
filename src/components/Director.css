@@ -1,0 +1,264 @@
+/* ===== DIRECTOR ===== */
+.director {
+  position: relative;
+  background: var(--dark-900);
+  overflow: hidden;
+}
+
+.director__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 0% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 100% 50%, rgba(124,58,237,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.director__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(3rem, 7vw, 6rem);
+  align-items: center;
+}
+
+/* Visual */
+.director__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.director__photo-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 380px;
+}
+
+.director__photo {
+  width: 280px;
+  height: 340px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(201,168,76,0.2);
+}
+
+.director__photo-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.director__photo-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #1A1A24, #111118, #0A0A0F);
+}
+
+.director__photo-initials {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.director__photo-tag {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250,248,243,0.4);
+  text-align: center;
+  padding: 0 2rem;
+}
+
+/* Decorative frames */
+.director__photo-frame {
+  position: absolute;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(201,168,76,0.15);
+}
+
+.director__photo-frame--1 {
+  width: 296px;
+  height: 356px;
+  top: -8px;
+  left: -8px;
+  z-index: 1;
+}
+
+.director__photo-frame--2 {
+  width: 310px;
+  height: 368px;
+  top: -16px;
+  left: -16px;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* Achievements */
+.director__achievements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 360px;
+}
+
+.director__achievement {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  background: var(--dark-700);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.director__achievement:hover {
+  border-color: rgba(201,168,76,0.25);
+  background: var(--dark-600);
+  transform: translateY(-2px);
+}
+
+.director__ach-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.director__ach-label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--light-200);
+  margin-bottom: 0.1rem;
+  line-height: 1.2;
+}
+
+.director__ach-sub {
+  font-size: 0.65rem;
+  color: rgba(250,248,243,0.4);
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* Content */
+.director__name-wrap {
+  margin-bottom: 0.5rem;
+}
+
+.director__name {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--light-200);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.director__role {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.director__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-style: italic;
+  color: var(--gold-light);
+  line-height: 1.7;
+  border-left: 3px solid var(--gold);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  opacity: 0.9;
+}
+
+.director__bio {
+  font-size: 0.9rem;
+  color: rgba(250,248,243,0.65);
+  line-height: 1.85;
+  margin-bottom: 0.9rem;
+}
+
+.director__bio strong { color: var(--light-200); }
+
+/* Credentials */
+.director__credentials {
+  padding: 1.5rem;
+  background: var(--dark-700);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: var(--radius-lg);
+  margin-top: 1.5rem;
+}
+
+.director__cred-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.director__cred-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.director__cred-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+  color: rgba(250,248,243,0.65);
+  line-height: 1.5;
+}
+
+.director__cred-dot {
+  color: var(--gold);
+  font-size: 0.6rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .director__grid { grid-template-columns: 1fr; }
+  .director__visual { order: -1; }
+  .director__photo-wrap { width: 260px; height: 320px; }
+  .director__photo { width: 230px; height: 290px; }
+  .director__photo-frame--1 { width: 244px; height: 304px; }
+  .director__photo-frame--2 { width: 256px; height: 316px; }
+}
+
+@media (max-width: 480px) {
+  .director__achievements { grid-template-columns: 1fr; }
+}

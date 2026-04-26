@@ -1,0 +1,280 @@
+/* ===== ABOUT ===== */
+.about {
+  position: relative;
+  background: var(--dark-800);
+  overflow: hidden;
+}
+
+.about__bg-shape {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+/* Visual Side */
+.about__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+}
+
+.about__visual-card {
+  position: absolute;
+  background: var(--dark-700);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: var(--radius-lg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about__visual-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-gold);
+}
+
+.about__visual-card--main {
+  width: 280px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, var(--dark-700), var(--dark-600));
+  border: 1px solid rgba(201,168,76,0.2);
+  position: relative;
+}
+
+.about__visual-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__rings {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__ring {
+  position: absolute;
+  border: 1.5px solid rgba(201,168,76,0.3);
+  border-radius: 50%;
+  animation: ringRotate 12s linear infinite;
+}
+
+.about__ring--1 {
+  width: 140px;
+  height: 140px;
+  animation-duration: 12s;
+  border-style: dashed;
+}
+
+.about__ring--2 {
+  width: 100px;
+  height: 100px;
+  animation-duration: 8s;
+  animation-direction: reverse;
+  border-color: rgba(201,168,76,0.5);
+}
+
+.about__ring--3 {
+  width: 62px;
+  height: 62px;
+  animation-duration: 5s;
+  border-color: rgba(201,168,76,0.7);
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.about__ring-core {
+  position: relative;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__ring-icon {
+  font-size: 1.1rem;
+  color: var(--dark-900);
+}
+
+.about__visual-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.about__visual-badge-num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.about__visual-badge-txt {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250,248,243,0.5);
+}
+
+/* City cards */
+.about__visual-card--delhi {
+  bottom: 30px;
+  left: -20px;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border-radius: var(--radius-md);
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.about__visual-card--mumbai {
+  top: 30px;
+  right: -20px;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border-radius: var(--radius-md);
+  animation: floatCard 6s ease-in-out infinite reverse;
+  animation-delay: -3s;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.about__city-icon {
+  font-size: 1.4rem;
+}
+
+.about__city-name {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--light-200);
+}
+
+.about__city-label {
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Content side */
+.about__content { position: relative; }
+
+.about__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--light-200);
+  margin-bottom: 1.25rem;
+}
+
+.about__heading em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.about__para {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(250,248,243,0.7);
+  margin-bottom: 1rem;
+}
+
+.about__para strong { color: var(--light-200); }
+
+/* Pillars */
+.about__pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about__pillar {
+  display: flex;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.about__pillar:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: rgba(201,168,76,0.2);
+  transform: translateY(-2px);
+}
+
+.about__pillar-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.about__pillar-title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.04em;
+}
+
+.about__pillar-desc {
+  font-size: 0.78rem;
+  color: rgba(250,248,243,0.55);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .about__visual { min-height: 360px; order: -1; }
+  .about__pillars { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .about__visual-card--main { width: 230px; height: 230px; }
+  .about__visual-card--delhi { left: 0; }
+  .about__visual-card--mumbai { right: 0; }
+}
