@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Footer.css';
 
+import logo from '../assets/logo.png';
+
 const quickLinks = [
   { label: 'About Us', href: '#about' },
   { label: 'Portfolio', href: '#portfolio' },
@@ -192,7 +194,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="footer__brand">
               <div className="footer__logo">
-                <span className="footer__logo-mark">B</span>
+                <img src={logo} alt="Baiji Logo" className="footer__logo-img" />
                 <div>
                   <div className="footer__logo-name">BAIJI ENTERTAINMENTS</div>
                   <div className="footer__logo-tagline">Creative Strategy · Media · Film · Celebrity Management</div>

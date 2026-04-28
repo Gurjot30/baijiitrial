@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 
+import logo from '../assets/logo.png';
+
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Portfolio', href: '#portfolio' },
@@ -48,9 +50,9 @@ export default function Navbar() {
         <div className="navbar__inner">
           {/* Logo */}
           <a href="#hero" className="navbar__logo" onClick={() => handleNav('#hero')}>
-            <span className="navbar__logo-mark">B</span>
+            <img src={logo} alt="Baiji Logo" className="navbar__logo-img" />
             <span className="navbar__logo-text">
-              BAIJI<span className="navbar__logo-accent"> ENT.</span>
+              BAIJI ENTERTAINMENTS
             </span>
           </a>
 
